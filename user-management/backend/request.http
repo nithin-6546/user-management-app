@@ -1,0 +1,24 @@
+###create a user
+POST http://localhost:8080/user-api/users
+Content-Type: application/json
+
+{
+    "name":"nithin",
+    "email":"nit@gmail.com",
+    "dateOfBirth":"2000-09-12",
+    "mobileNumber":9390030496
+}
+
+
+###read all users
+GET http://localhost:8080/user-api/users
+
+###read a user by id
+GET http://localhost:8080/user-api/users/69a6819aff9b0f16c051155e
+
+
+#### delete a user by id
+DELETE  http://localhost:8080/user-api/users/69a691e2e43a50dc69760de7
+
+### activate a user
+PATCH http://localhost:8080/user-api/users/69a691e2e43a50dc69760de7
