@@ -5,7 +5,7 @@ import {config} from 'dotenv'
 import cors from 'cors'
 //read env variable
 config();
-
+console.log("DB URL Check:", process.env.DB_URL);
 //create HTTp server
 const app=exp()
 
@@ -22,18 +22,19 @@ app.use('/user-api',UserApp)
 
 //connect to database
 
-async function connectDb(params) {
-    try{
-        await connect(process.env.DB_URL)
-        console.log("Connected To database")
-        //assign port number
-        const port=process.env.PORT
-        app.listen(port,()=>console.log('server started'))
+async function connectDb() {
+    try {
+        if (!process.env.DB_URL) {
+            throw new Error("DB_URL is missing from .env file");
+        }
+        await connect(process.env.DB_URL);
+        console.log("Connected To database");
+        
+        const port = process.env.PORT || 8080;
+        app.listen(port, () => console.log(`Server started on port ${port}`));
+    } catch (err) {
+        console.error("Database Connection Error Detail:", err.message); // This will tell you exactly WHY it failed
     }
-    catch(err){
-        console.log("Error in dataBase connection");
-    }
-    
 }
 connectDb()
 //add error handling middleware
