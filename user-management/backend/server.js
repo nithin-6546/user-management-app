@@ -18,7 +18,7 @@ app.use(cors({
 app.use(exp.json())
 
 //forward res to UserApi if Path starts with/user-api
-app.use('/',UserApp)
+app.use('/user-api',UserApp)
 
 //connect to database
 
