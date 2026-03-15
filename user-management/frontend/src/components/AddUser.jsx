@@ -19,7 +19,7 @@ function AddUser() {
     setServerError(""); 
     
     try {
-      let res = await fetch("https://user-management-app-1-z9lx.onrender.com/user-api", {
+      let res = await fetch("https://user-management-app-1-z9lx.onrender.com/user-api/user-list", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
