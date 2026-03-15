@@ -20,6 +20,7 @@ function UserList() {
         }
       } catch (error) {
         setErr("Connection Error. Is the backend running on 8080?");
+        console.log(error.message);
       } finally {
         setIsLoading(false);
       }

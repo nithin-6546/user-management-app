@@ -11,7 +11,7 @@ const app=exp()
 
 //add cors
 app.use(cors({
-  origin:"https://user-management-4pqsvpe5v-nithin-6546s-projects.vercel.app/"
+  origin:"https://user-management-4pqsvpe5v-nithin-6546s-projects.vercel.app"
 }))
 
 //Add body Parser middleware
