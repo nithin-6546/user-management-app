@@ -16,6 +16,13 @@ app.use(cors({
 
 //Add body Parser middleware
 app.use(exp.json())
+app.get("/", (req, res) => {
+  res.send("Backend is running 🚀");
+});
+
+app.get("/api/test", (req, res) => {
+  res.json({ message: "API working ✅" });
+});
 
 //forward res to UserApi if Path starts with/user-api
 app.use('/user-api',UserApp)
