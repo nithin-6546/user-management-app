@@ -11,7 +11,7 @@ function UserList() {
     async function getUsers() {
       setIsLoading(true);
       try {
-        let res = await fetch("https://user-management-app-1-z9lx.onrender.com/user-api/user-list");
+        let res = await fetch("https://user-management-app-2-0oav.onrender.com/user-api/users");
         if (res.status === 200) {
           let resObj = await res.json();
           setUsers(resObj.payload || []); 

@@ -11,7 +11,9 @@ const app=exp()
 
 //add cors
 app.use(cors({
-  origin:"https://user-management-4pqsvpe5v-nithin-6546s-projects.vercel.app"
+  origin:"https://user-management-3hhwn7p1s-nithin-6546s-projects.vercel.app/",
+  methods:["GET","POST","PUT","DELETE"],
+  credentials:true
 }))
 
 //Add body Parser middleware
@@ -20,7 +22,7 @@ app.get("/", (req, res) => {
   res.send("Backend is running 🚀");
 });
 
-app.get("/api/test", (req, res) => {
+app.get("/test", (req, res) => {
   res.json({ message: "API working ✅" });
 });
 

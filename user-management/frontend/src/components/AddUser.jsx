@@ -19,7 +19,7 @@ function AddUser() {
     setServerError(""); 
     
     try {
-      let res = await fetch("https://user-management-app-1-z9lx.onrender.com/user-api/user-list", {
+      let res = await fetch("https://user-management-app-2-0oav.onrender.com/user-api/users", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(newUser),
@@ -28,7 +28,7 @@ function AddUser() {
       const data = await res.json();
 
       if (res.status === 201) {
-        navigate("/users-list");
+        navigate("/user-list");
       } else if (res.status === 409 || data.message.includes("exists")) {
         // Highlight the specific field using setError
         setError("email", { 
