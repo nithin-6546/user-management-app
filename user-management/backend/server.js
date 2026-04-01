@@ -10,12 +10,7 @@ console.log("DB URL Check:", process.env.DB_URL);
 const app=exp()
 
 //add cors
-app.use(cors({
-  origin:"https://user-management-h7ow024js-nithin-6546s-projects.vercel.app",
-  methods:["GET","POST","PUT","DELETE"],
-  credentials:true
-}))
-
+app.use(cors())
 //Add body Parser middleware
 app.use(exp.json())
 app.get("/", (req, res) => {
