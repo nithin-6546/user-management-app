@@ -11,7 +11,7 @@ const app=exp()
 
 //add cors
 app.use(cors({
-  origin:"https://user-management-3hhwn7p1s-nithin-6546s-projects.vercel.app/",
+  origin:"https://user-management-h7ow024js-nithin-6546s-projects.vercel.app",
   methods:["GET","POST","PUT","DELETE"],
   credentials:true
 }))
